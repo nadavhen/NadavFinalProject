@@ -8,6 +8,7 @@ In order to do so i will be using these libraries and modules:
 - [Biopython](https://biopython.org/)
 - [foldseq](https://pypi.org/project/seqfold/)
 - [ViennaRNA Package 2](https://www.tbi.univie.ac.at/RNA/documentation.html#)
+- with other packges like numpy and pandas
 
 the input for the program:
 
@@ -17,4 +18,6 @@ the input for the program:
 4. minimal free energy of secondary structure (optional difault will be set to -10)
 
 the out put would be an excel file containing the primers with all their parameters and secondary structure
+
+I want also to try and work with genebank format(.gbk) and allow the user just to pick a feature that it wsnts to create primer for 
 
