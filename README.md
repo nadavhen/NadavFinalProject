@@ -5,22 +5,16 @@ I want to build a tool that will get a sequence and produce primers for that seq
 
 In order to do so i will be using these libraries and modules:
 
-<ul>
-    <li>[Biopython](https://biopython.org/)<l/i>
-    <li>[foldseq](https://pypi.org/project/seqfold/)</li>
-    <li>[ViennaRNA Package 2](https://www.tbi.univie.ac.at/RNA/documentation.html#)</li>
-</ul>
-
-
+- [Biopython](https://biopython.org/)
+- [foldseq](https://pypi.org/project/seqfold/)
+- [ViennaRNA Package 2](https://www.tbi.univie.ac.at/RNA/documentation.html#)
 
 the input for the program:
 
-<ol>
-    <li>the sequence in raw text or fasta format</li>
-    <li>from which nucleutides to start and end (optional by default it will create primers for the entire sequence)</li>
-    <li>anealing temperature (optional difault will be 55C)</li>
-    <li>minimal free energy of secondary structure (optional difault will be set to -10)</li>
-</ol>
+1. the sequence in raw text or fasta format
+2. from which nucleutides to start and end (optional by default it will create primers for the entire sequence)
+3. anealing temperature (optional difault will be 55C)
+4. minimal free energy of secondary structure (optional difault will be set to -10)
 
 the out put would be an excel file containing the primers with all their parameters and secondary structure
 
