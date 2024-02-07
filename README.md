@@ -6,10 +6,10 @@ I want to build a tool that will get a sequence and produce primers for that seq
 In order to do so i will be using these libraries and modules:
 
 <ul>
-    <li>Biopython<l/i>
-    <li>foldseq</li>
-    <li>ViennaRNA Package 2</li>
-<ul>
+    <li>[Biopython](https://biopython.org/)<l/i>
+    <li>[foldseq](https://pypi.org/project/seqfold/)</li>
+    <li>[ViennaRNA Package 2](https://www.tbi.univie.ac.at/RNA/documentation.html#)</li>
+</ul>
 
 
 
