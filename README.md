@@ -10,8 +10,10 @@ In order to do so i will be using these libraries and modules:
     <li>foldseq</li>
     <li>ViennaRNA Package 2</li>
 <ul>
- 
- the input for the program:
+
+
+
+the input for the program:
 
 <ol>
     <li>the sequence in raw text or fasta format</li>
