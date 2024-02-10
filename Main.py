@@ -1,3 +1,4 @@
 import GUI as gui
 
-gui.run_gui()
+type,input=gui.run_gui()
+print("mama",type,input)

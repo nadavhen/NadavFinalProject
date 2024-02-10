@@ -1,4 +1,4 @@
-def run_gui():
+def run_gui(): 
     import tkinter as tk
     from tkinter import ttk
     from tkinter import filedialog
@@ -38,7 +38,13 @@ def run_gui():
         path_label.config(text=file_path)
         path_label.grid(row=1, column=1 ,sticky="W")
         sub_button.grid(row=2, column=1,sticky='W')
-
+    def submit():
+        selected_option = dropdown.get()
+        root.quit()
+        if selected_option == "raw text":
+            return dropdown.get(),text_box.get("1.0", "end-1c")
+        elif selected_option == "FASTA or Genebank file":
+            return dropdown.get(),path_label.cget("text")
     root = tk.Tk()
     root.title("GUI with Drop-down Menu")
     # Create features
@@ -59,5 +65,6 @@ def run_gui():
     dropdown.current(0)  # Set the default selected option
     dropdown.bind("<<ComboboxSelected>>", on_select)
     dropdown.grid(row=0, column=1, sticky="w")
-
+    sub_button.config(command=submit)
     root.mainloop()
+    return submit()
