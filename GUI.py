@@ -78,7 +78,6 @@ def run_gui():
     # Return the value set on root object after the GUI is closed
     return root.return_value
 
-
 def para_gui(length_default):
     def on_validate(P):
         if P.strip() == "":
@@ -211,7 +210,7 @@ def para_gui(length_default):
     dg_frame = tk.Frame(root)
     dg_frame.pack(fill='x', **padding)
     activate_dg_checkbtn = tk.Checkbutton(dg_frame, text="", variable=activate_dg_var, onvalue=True, offvalue=False, command=toggle_dg, font=font)
-    dg_label = tk.Label(dg_frame, text="MaximalΔG:", font=font)
+    dg_label = tk.Label(dg_frame, text="Maximal\nΔG:", font=font)
     dg_spinbox = tk.Spinbox(dg_frame, from_=-100, to=0, increment=0.1, textvariable=tk.DoubleVar(value=-10), width=spinbox_width, font=font, state='disabled')
     activate_dg_checkbtn.pack(side=tk.LEFT, **padding)
     dg_label.pack(side=tk.LEFT, **padding)
