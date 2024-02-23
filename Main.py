@@ -16,7 +16,7 @@ elif res[0]=="text":
 
 seq_length=len(sequence)
 parameters=gui.para_gui(seq_length)
-print(parameters)
+
 #breaking parameters dictionary into variables
 length=parameters["length"]
 start=parameters["start"]
