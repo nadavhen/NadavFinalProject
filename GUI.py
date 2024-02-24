@@ -5,7 +5,7 @@ import pandas as pd
 
 def run_gui():
     root = tk.Tk()
-    root.title("GUI with Drop-down Menu")
+    root.title("Enter DNA sequence")
 
     # Initialize return_value as an attribute of root to ensure it is accessible outside nested functions
     root.return_value = None
@@ -13,40 +13,18 @@ def run_gui():
     def validate_input(event=None):
         input_text = text_box.get("1.0", "end-1c")
         if all(char in "gtacGTAC" for char in input_text):
-            sub_button.grid(row=2, column=1, sticky='W')
-            label_invalid.grid_forget()
+            sub_button.pack(side='left', padx=(10, 0))
+            label_invalid.pack_forget()
         else:
-            label_invalid.grid(row=2, column=1, sticky="W")
-            sub_button.grid_forget()
-
-    def on_select(event=None):
-        # Using after to make sure the UI updates are scheduled and processed in the event loop
-        root.after(100, update_layout)
-
-    def update_layout():
-        selected_option = dropdown.get()
-        if selected_option == "raw text":
-            label_tb.grid(row=1, column=0, sticky="N")
-            text_box.grid(row=1, column=1, sticky="E", columnspan=3)
-            browse_button.grid_forget()
-            label_browse.grid_forget()
-            path_label.grid_forget()
-            validate_input()  # Call validate to correctly place submit button
-            root.geometry("500x200")
-        elif selected_option == "FASTA file":
-            label_browse.grid(row=1, column=0)
-            browse_button.grid(row=1, column=1)
-            text_box.grid_forget()
-            label_tb.grid_forget()
-            sub_button.grid_forget()
-            root.geometry("350x100")
+            label_invalid.pack(side='left', padx=(10, 0))
+            sub_button.pack_forget()
 
     def browse_file():
-        file_path = filedialog.askopenfilename(filetypes=(("FASTA files", "*.fasta"),("FASTA files", "*.fa"), ("All files", "*.*")))
+        file_path = filedialog.askopenfilename(filetypes=(("FASTA files", "*.fasta"), ("FASTA files", "*.fa"), ("All files", "*.*")))
         if file_path:  # Ensure a file was selected
             path_label.config(text=file_path)
-            path_label.grid(row=2, column=1, sticky="W")
-            sub_button.grid(row=3, column=1, sticky='W')
+            path_label.pack(side='left', padx=(10, 0))
+            sub_button.pack(side='left', padx=(10, 0))
             
     def submit():
         selected_option = dropdown.get()
@@ -54,33 +32,50 @@ def run_gui():
             root.return_value = ['text', text_box.get("1.0", "end-1c")]
         elif selected_option == "FASTA file":
             root.return_value = ['file', path_label.cget("text")]
+        print(root.return_value)  # For demonstration, print the return value
         root.destroy()
 
-    # GUI layout and configuration
+    # Dropdown for selecting input type
     dropdown = ttk.Combobox(root, values=["-select input type-", "raw text", "FASTA file"], state="readonly")
-    dropdown.current(0)  # Set the default selected option
-    dropdown.grid(row=0, column=1, sticky="w")
-    dropdown.bind("<<ComboboxSelected>>", on_select)
+    dropdown.current(0)  # Set default selection
+    dropdown.pack(fill='x', padx=10, pady=10)
+    dropdown.bind("<<ComboboxSelected>>", lambda e: update_layout())
 
-    label_select = tk.Label(root, text="Select input:")
-    label_select.grid(row=0, column=0, sticky="e")
-
-    text_box = tk.Text(root, height=10, width=50)
+    # Text input frame setup
+    text_frame = tk.Frame(root)
+    label_tb = tk.Label(text_frame, text="Enter DNA sequence:")
+    label_tb.pack(side='top', fill='x', padx=10, pady=(10, 0))
+    text_box = tk.Text(text_frame, height=5, width=50)
+    text_box.pack(side='top', fill='both', expand=True, padx=10)
     text_box.bind("<KeyRelease>", validate_input)
+    label_invalid = tk.Label(text_frame, text="Invalid input", fg="red")
 
-    label_tb = tk.Label(root, text="Enter DNA sequence:")
-    label_browse = tk.Label(root, text="Select:")
-    path_label = tk.Label(root, width=30)  # Adjust the width of the label as needed
-    label_invalid = tk.Label(root, text="Invalid input", fg="red")
+    # File input frame setup
+    file_frame = tk.Frame(root)
+    label_browse = tk.Label(file_frame, text="Select FASTA file:")
+    label_browse.pack(side='left', padx=10, pady=10)
+    browse_button = ttk.Button(file_frame, text="Browse", command=browse_file)
+    browse_button.pack(side='left', pady=10)
+    path_label = tk.Label(file_frame, width=30)
 
-    browse_button = ttk.Button(root, text="Browse", command=browse_file)
+    # Submit button
     sub_button = ttk.Button(root, text="Submit", command=submit)
 
-    # Start the GUI event loop
-    root.mainloop()
+    # Function to update layout based on dropdown selection
+    def update_layout():
+        if dropdown.get() == "raw text":
+            file_frame.pack_forget()
+            text_frame.pack(fill='both', expand=True)
+            sub_button.pack_forget()  # Reset submit button state
+            validate_input()  # Validate input to decide if submit button should be shown
+        elif dropdown.get() == "FASTA file":
+            text_frame.pack_forget()
+            file_frame.pack(fill='both', expand=True)
+            label_invalid.pack_forget()
+            sub_button.pack(side='left', padx=(10, 0))
 
-    # Return the value set on root object after the GUI is closed
-    return root.return_value
+    root.mainloop()
+    return root.return_value  # Return the collected input values
 
 
 
@@ -274,7 +269,7 @@ def displayAndSave_gui(df: pd.DataFrame):
 
     # Create the main window
     root = tk.Tk()
-    root.title("Display DataFrame and Save")
+    root.title("Results")
 
     # Styling for the Treeview
     style = ttk.Style()
