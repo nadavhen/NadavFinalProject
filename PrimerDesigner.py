@@ -2,9 +2,6 @@ from Bio.Seq import Seq
 from Bio.SeqUtils import MeltingTemp as mt
 import Bio.SeqUtils as sequtils
 import RNA
-import subprocess
-import pandas as pd
-import regex 
 
 def primer_design(sequence:str,start:int,end:int,p_length:int=20):
     """creates a list of forward and reverse primers for a given sequence"""
@@ -70,12 +67,13 @@ class Primer:
         self.secondary_structure,self.dg=RNA.fold(str(sequence))
         
     def __str__(self):
-        return {"sequence":self.sequence,
+        string={"sequence":self.sequence,
                 "length":self.length,
                 "gc_content":self.gc_content,
                 "tm":self.tm,
                 "secondary_structure":self.secondary_structure,
                 "dg":self.dg}
+        return str(string)
     def to_dict(self):
         return {"sequence":str(self.sequence),
                 "length":self.length,
