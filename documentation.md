@@ -3,6 +3,21 @@
 ## Overview
 This documentation covers the main components of a primer design application, including `PrimerDesigner.py`, `Main.py`, and `GUI.py`. The application provides a comprehensive solution for designing primers, integrating sequence input, parameter customization, and result presentation through a user-friendly graphical interface.
 
+## Main.py
+
+### Overview
+Serves as the entry point, integrating GUI components with primer design logic.
+
+### Workflow
+1. Initializes the GUI for sequence input.
+2. Collects sequence and parameters for primer design.
+3. Utilizes `PrimerDesigner` for primer generation and filtering.
+4. Displays results for user review and saving.
+
+### Dependencies
+- Biopython, RNA library for `PrimerDesigner.py`.
+- `tkinter` and `pandas` for `GUI.py`.
+
 ## PrimerDesigner.py
 
 ### Overview
@@ -17,17 +32,9 @@ A Python module for designing primers for a given DNA sequence using Biopython a
 ### Class `Primer`
 Represents a primer with properties like sequence, GC content, and melting temperature.
 
-## Main.py
-
-### Overview
-Serves as the entry point, integrating GUI components with primer design logic.
-
-### Workflow
-1. Initializes the GUI for sequence input.
-2. Collects sequence and parameters for primer design.
-3. Utilizes `PrimerDesigner` for primer generation and filtering.
-4. Displays results for user review and saving.
-
+### Dependencies
+- `Biopython`
+- `RNA`
 ## GUI.py
 
 ### Overview
@@ -38,9 +45,9 @@ Creates graphical user interfaces for the application using `tkinter`.
 - `para_gui`: GUI for inputting primer design parameters.
 - `displayAndSave_gui`: Displays results and provides a save option.
 
-## Dependencies
-- Biopython, RNA library for `PrimerDesigner.py`.
-- `tkinter` and `pandas` for `GUI.py`.
+### Dependencies
+- `tkinter`
+- `pandas`
 
 This documentation encapsulates the modular design and functionality of a primer design application, offering insights into its components and usage.
 
@@ -113,7 +120,6 @@ print(primer)
 primer_properties = primer.to_dict()
 print(primer_properties)
 ```
-# Outputs the primer's properties as a dictionary
 
 
 ## GUI.py Functions
