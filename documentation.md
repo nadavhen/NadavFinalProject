@@ -63,12 +63,32 @@ This documentation encapsulates the modular design and functionality of a primer
   - `p_length` (int, optional): The desired length of the primers. Defaults to 20.
 - **Outputs**: A tuple containing two lists: the list of forward primers and the list of reverse primers.
 - **Description**: Generates forward and reverse primers for a given DNA sequence based on specified start and end positions and primer length.
+- **Example Usage**:
+    ```python
+    sequence = "AGCTTAGCTAGCTTACGATCGATCGTACGATCGTACGATCGATCG"
+    start = 10
+    end = 30
+    p_length = 20
+
+    forward_primers, reverse_primers = primer_design(sequence, start, end, p_length)
+
+    print("Forward Primers:", forward_primers)
+    print("Reverse Primers:", reverse_primers)
+    ```
 
 ### `ListToPrimes(prime_list: list) -> List[Primer]`
 - **Inputs**:
   - `prime_list` (list): A list of sequences to be converted into Primer objects.
 - **Outputs**: A list of `Primer` objects.
 - **Description**: Converts a list of primer sequences into Primer objects for object-oriented manipulation and analysis.
+- **Example Usage**:
+    ```python
+    primer_sequences = ['AGCTTAGCTA', 'CGTACGATCG']
+    primer_objects = ListToPrimes(primer_sequences)
+
+    for primer in primer_objects:
+        print(primer)
+    ```
 
 ### `checkBindingSites(primer_df, sequence: str) -> pd.DataFrame`
 - **Inputs**:
@@ -76,12 +96,37 @@ This documentation encapsulates the modular design and functionality of a primer
   - `sequence` (str): The DNA sequence to check for primer binding sites.
 - **Outputs**: A DataFrame with an additional column showing the count of binding sites for each primer.
 - **Description**: Evaluates the DNA sequence for the number of potential binding sites for each primer, assisting in assessing primer specificity.
+- **Example Usage**:
+    ```python
+    import pandas as pd
+
+    # Assuming primer_df is a DataFrame containing a column 'Sequence' with primer sequences
+    primer_df = pd.DataFrame({'Sequence': ['AGCTTAGCTA', 'CGTACGATCG']})
+    sequence = "AGCTTAGCTAGCTTACGATCGATCGTACGATCGTACGATCGATCG"
+
+    primer_df_with_binding_sites = checkBindingSites(primer_df, sequence)
+
+    print(primer_df_with_binding_sites)
+    ```
 
 ### `filterPrimers(primer_df, max_binding_sites: int, max_tm: float, min_tm: float, min_dg: float, min_gc: float, max_gc: float) -> pd.DataFrame`
 - **Inputs**:
   - Various parameters for filtering primers, such as the maximum number of binding sites, melting temperature range, free energy, and GC content range.
 - **Outputs**: A filtered DataFrame of primers.
 - **Description**: Filters primers based on specified criteria to ensure they meet the design requirements.
+- **Example Usage**:
+    ```python
+    max_binding_sites = 3
+    max_tm = 60.0
+    min_tm = 50.0
+    min_dg = -20.0
+    min_gc = 40.0
+    max_gc = 60.0
+
+    filtered_primers = filterPrimers(primer_df_with_binding_sites, max_binding_sites, max_tm, min_tm, min_dg, min_gc, max_gc)
+
+    print(filtered_primers)
+    ```
 
 ## Class `Primer`
 The `Primer` class represents a primer with its sequence and various properties calculated based on the sequence. It encapsulates functionality for calculating properties such as GC content, melting temperature (Tm), secondary structure, and free energy (ΔG), which are essential for assessing primer suitability in PCR reactions.
