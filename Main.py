@@ -1,5 +1,4 @@
 import GUI as gui
-from Bio.Seq import Seq
 import PrimerDesigner
 import pandas as pd
 

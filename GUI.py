@@ -133,8 +133,8 @@ def para_gui(length_default):
         result['amplicon_option'] = radio_value.get()
         result['pl'] = int(pl_spinbox.get()) if activate_pl_var.get() else 20
         result['gc'] = int(gc_spinbox.get()) if activate_gc_var.get() else 40
-        result['tm'] = int(tm_spinbox.get()) if activate_tm_var.get() else 55
-        result['dg'] = int(dg_spinbox.get()) if activate_dg_var.get() else -10
+        result['tm'] = float(tm_spinbox.get()) if activate_tm_var.get() else 55
+        result['dg'] = float(dg_spinbox.get()) if activate_dg_var.get() else -10
         root.destroy()
 
     root = tk.Tk()
