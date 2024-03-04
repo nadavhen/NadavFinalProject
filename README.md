@@ -6,21 +6,10 @@ when planned manualy you need to select the sequence yourself and then analyze i
 
 I want to build a tool that will get a sequence and produce primers for that sequence.
 
-In order to do so i will be using these libraries and modules:
+In order to do so I am using these libraries and modules:
 
 - [Biopython](https://biopython.org/)
-- [foldseq](https://pypi.org/project/seqfold/)
 - [ViennaRNA Package 2](https://www.tbi.univie.ac.at/RNA/documentation.html#)
 - other standard packges like numpy and pandas
 
-the input for the program:
-
-1. the sequence in raw text or fasta format
-2. from which nucleutides to start and end (optional by default it will create primers for the entire sequence)
-3. anealing temperature (optional difault will be 55C)
-4. minimal free energy of secondary structure (optional difault will be set to -10)
-
-the out put would be an excel file containing the primers with all their parameters and secondary structure
-
-I want also to try and work with genebank format(.gbk) and allow the user just to pick a feature that it wsnts to create primer for 
-
+The application features a graphical user interface for inputting DNA sequences for analysis. It supports direct text entry or uploading of FASTA files, with validation to ensure input accuracy. The interface dynamically adjusts based on the chosen input method, streamlining the user experience. This tool is designed to facilitate DNA sequence analysis by providing a user-friendly platform for data input and validation.
