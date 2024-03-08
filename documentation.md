@@ -3,6 +3,25 @@
 ## Overview
 This documentation covers the main components of a primer design application, including `PrimerDesigner.py`, `Main.py`, and `GUI.py`. The application provides a comprehensive solution for designing primers, integrating sequence input, parameter customization, and result presentation through a user-friendly graphical interface.
 
+The get a DNA sequnce and works in two modes:
+- Raw text: the user can enter a DNA sequence directly into the text box.
+- FASTA file: the user can upload a FASTA file containing a DNA sequence.
+further more the user can customize the primer design parameters such as:
+- Primer length
+- GC content
+- Melting temperature
+- Free energy
+
+The application then displays the results of the primer design, including the forward and reverse primers, their sequences, and the primer properties. The user can view the results and save them to a file for future reference.
+the primers are designed using a sliding window approach, which is then analyzed for the following parameters:
+- GC content
+- Melting temperature
+- Free energy
+- Secondary structure
+- Binding sites
+
+filters are then applied to the primers based on the parameters set by the user and the results are displayed in a table format. if no primers are found in the first run the application will try to find primers with a larger length and if no primers are found the application will alert the user that no primers were found.
+
 ## Main.py
 
 ### Overview
