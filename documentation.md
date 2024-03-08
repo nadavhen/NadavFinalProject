@@ -3,10 +3,10 @@
 ## Overview
 This documentation covers the main components of a primer design application, including `PrimerDesigner.py`, `Main.py`, and `GUI.py`. The application provides a comprehensive solution for designing primers, integrating sequence input, parameter customization, and result presentation through a user-friendly graphical interface.
 
-The get a DNA sequnce and works in two modes:
+The application accepts a DNA sequence and operates in two modes:
 - Raw text: the user can enter a DNA sequence directly into the text box.
 - FASTA file: the user can upload a FASTA file containing a DNA sequence.
-further more the user can customize the primer design parameters such as:
+Furthermore the user can customize the primer design parameters such as:
 - Primer length
 - GC content
 - Melting temperature
@@ -164,7 +164,7 @@ The `Primer` class represents a primer with its sequence and various properties 
 Constructor method to initialize a Primer object with its sequence and calculate its properties.
 - **Inputs**:
   - `sequence` (str): The nucleotide sequence of the primer.
-- **Actions**: Calculates the primer's length, GC content, melting temperature, secondary structure, and free energy upon instantiation.
+- **Actions**: Calculates the primer's length, GC content, melting temperature, secondary structure, and free energy upon initialization.
 
 #### `__str__(self)`
 Returns a string representation of the Primer object, including its sequence and calculated properties.
