@@ -66,5 +66,8 @@ while True:
     if len(forward_primer_df)>0 and len(reverse_primer_df)>0:
         break
     else:
+        if pl>=30:
+            break
         pl+=1
+
 gui.displayAndSave_gui(final_primers)
