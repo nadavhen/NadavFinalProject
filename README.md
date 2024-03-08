@@ -16,6 +16,7 @@ The application can be used to design primers for any DNA sequence, providing a 
 
 The application is designed to be modular and extensible, allowing for the addition of new features and functionalities in the future. It can be integrated with other tools and platforms to enhance its capabilities and provide a more comprehensive solution for primer design and analysis. The codebase is well-documented and structured, making it easy to understand and maintain, and the application can be further optimized for performance and scalability.
 
+for further information and explanation please refer to the [documentation](documentation.md)
 
 **Step 1**: Install all required packages whcih include: [Biopython](https://biopython.org/), [ViennaRNA Package 2](https://www.tbi.univie.ac.at/RNA/documentation.html#), [tkinter](https://docs.python.org/3/library/tkinter.html), [pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html).
 
@@ -86,10 +87,9 @@ when done press the "Submit" button and move to the next window.
 The next window will show the results of the primer design, including the forward and reverse primers, their sequences, and the primer properties. The user can view the results and save them to a file for future reference.
 
 <div align="center">
-    <img src="Pictures/output_menu.png" alt="Results" width="400">
+    <img src="Pictures/output_menu.png" alt="Results" width="600">
 </div>
 
-for further [documentation](documentation.md)
 
 
 
