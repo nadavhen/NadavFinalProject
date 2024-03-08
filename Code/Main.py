@@ -84,6 +84,5 @@ while True:
         if pl >= 30:
             break
         pl += 1  # Increment primer length and retry
-
 # Display the final primers in the GUI and offer to save them
 gui.displayAndSave_gui(final_primers)
