@@ -29,7 +29,9 @@ pip install pandas
 Step 2: download python files: Main.py, Primerdesigner.py, GUI.py and place them in the same directory.
 
 Step 3: Run the Main.py file using the command line or an IDE. After running the file the next window will open up:
-![Start Menu](Pictures/start_menu.png)
+<div align="center">
+    <img src="Pictures/start_menu.png" alt="Start Menu" width="400">
+</div>
 Step 4: Enter the DNA sequence or upload a FASTA file to begin the analysis.
 
 Step 5: Customize primer design parameters and review the results for further use.
