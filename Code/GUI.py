@@ -320,4 +320,3 @@ def displayAndSave_gui(df: pd.DataFrame):
     status_label = tk.Label(root, text="", fg="green")  # Label to show save status
 
     root.mainloop()  # Start the GUI event loop
-
