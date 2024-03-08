@@ -40,7 +40,7 @@ selsect on of the options.
 
 Step 4: Enter the DNA sequence or upload a FASTA file to begin the analysis.
 
-When "raw text" is selected the next window will appear, enter a valid DNA sequence in the text box. a valid DNA sequence consists of A, T, G, C and the program is *not* case sensitive.
+When "raw text" is selected the next window will appear, enter a valid DNA sequence in the text box. a valid DNA sequence consists of A, T, G, C and the program is **not** case sensitive.
 <div align="center">
     <img src="Pictures/textInput.png" alt="Raw Text Input" width="400">
 </div>
@@ -48,6 +48,15 @@ When entering an invalid input you wont be able to submit your sequence and it w
 <div align="center">
     <img src="Pictures/invalid_textInput.png" alt="Invalid Text Input" width="400">
 </div>
+If the "FASTA file" option is selected the next window will apear:
+<div align="center">
+    <img src="Pictures/FASTA_input.png" alt="FASTA input" width="400">
+</div>
+when pressing the "Browse" button a file brower will open up allowing the selection of .FASTA files only. 
+after selecting a file a "Submit" button will appear.
+
+pressing the "Submit" will send the user to the next window.
+
 
 Step 5: Customize primer design parameters and review the results for further use.
 
