@@ -46,7 +46,7 @@ When "raw text" is selected the next window will appear, enter a valid DNA seque
 </div>
 When entering an invalid input you wont be able to submit your sequence and it will alert you that the sequence is invalid
 <div align="center">
-    <img src="Pictures/invalid_textiInput.png" alt="Invalid Text Input" width="400">
+    <img src="Pictures/invalid_textInput.png" alt="Invalid Text Input" width="400">
 </div>
 
 Step 5: Customize primer design parameters and review the results for further use.
