@@ -2,7 +2,6 @@ import PrimerDesigner
 import pandas as pd
 from Bio.Seq import Seq
 
-
 sequence="ATATCCAGCTTACCTATTAGCCCCTGATCACTTCTTTCTTCACAGCCGATGATAGTAACTAACTCAGGGCACGGGGGTTACGACTTGATCTTTCACGCAG"
 primer_df=pd.DataFrame(columns=["sequence","length","gc_content","tm","secondary_structure","dg"])
 res=PrimerDesigner.primer_design(sequence,0,100,20)
