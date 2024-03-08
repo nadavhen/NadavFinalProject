@@ -17,7 +17,7 @@ The application can be used to design primers for any DNA sequence, providing a 
 The application is designed to be modular and extensible, allowing for the addition of new features and functionalities in the future. It can be integrated with other tools and platforms to enhance its capabilities and provide a more comprehensive solution for primer design and analysis. The codebase is well-documented and structured, making it easy to understand and maintain, and the application can be further optimized for performance and scalability.
 
 
-Step 1: Install all required packages whcih include: [Biopython](https://biopython.org/), - [ViennaRNA Package 2](https://www.tbi.univie.ac.at/RNA/documentation.html#), [tkinter](https://docs.python.org/3/library/tkinter.html), [pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html).
+Step 1: Install all required packages whcih include: [Biopython](https://biopython.org/), [ViennaRNA Package 2](https://www.tbi.univie.ac.at/RNA/documentation.html#), [tkinter](https://docs.python.org/3/library/tkinter.html), [pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html).
 
 ```python
 pip install biopython
@@ -36,14 +36,23 @@ When pressing the drop down menu two options will show raw text and uploading a 
 <div align="center">
     <img src="Pictures/start_dropdown.png" alt="Dropdown Menu" width="200">
 </div>
+selsect on of the options.
+
 Step 4: Enter the DNA sequence or upload a FASTA file to begin the analysis.
+
+When "raw text" is selected the next window will appear, enter a valid DNA sequence in the text box. a valid DNA sequence consists of A, T, G, C and the program is *not* case sensitive.
+<div align="center">
+    <img src="Pictures/textinput.png" alt="Raw Text Input" width="400">
+</div>
+When entering an invalid input you wont be able to submit your sequence and it will alert you that the sequence is invalid
+<div align="center">
+    <img src="Pictures/invalid_textinput.png" alt="Invalid Text Input" width="400">
+</div>
 
 Step 5: Customize primer design parameters and review the results for further use.
 
 
 
 
-Step 4: Enter the DNA sequence or upload a FASTA file to begin the analysis.
 
-Step 5: Customize primer design parameters and review the results for further use.
 
