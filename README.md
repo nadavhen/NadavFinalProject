@@ -30,7 +30,11 @@ Step 2: download python files: Main.py, Primerdesigner.py, GUI.py and place them
 
 Step 3: Run the Main.py file using the command line or an IDE. After running the file the next window will open up:
 <div align="center">
-    <img src="Pictures/start_menu.png" alt="Start Menu" width="400">
+    <img src="Pictures/start_menu.png" alt="Start Menu" width="200">
+</div>
+When pressing the drop down menu two options will show raw text and uploading a fasta file:
+<div align="center">
+    <img src="Pictures/start_dropdown.png" alt="Dropdown Menu" width="200">
 </div>
 Step 4: Enter the DNA sequence or upload a FASTA file to begin the analysis.
 
