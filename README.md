@@ -23,7 +23,7 @@ For further information and explanation, please refer to the [documentation](doc
 ```python
 pip install biopython
 pip install viennarna
-pip install tkinter
+pip install tk
 pip install pandas
 ```
 
