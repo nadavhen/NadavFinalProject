@@ -90,3 +90,8 @@ The next window will show the results of the primer design, including the forwar
 <div align="center">
     <img src="Pictures/output_menu.png" alt="Results" width="600">
 </div>
+
+
+
+Testing the code was done with the test_Primerdesigner.py file, which contains a few tests that cover the relevant parts of the code. The tests were successful, and the code is ready for use.
+to run the tests, simply run the test_Primerdesigner.py file with the command line or an IDE using pytest.
