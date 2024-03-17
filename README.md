@@ -27,6 +27,8 @@ pip install tk
 pip install pandas
 ```
 
+In some cases the packages clash or are undetected, to dill with these problem simply open a new python environment. In some cases this might not hekp and the re-installation of anaconda might be required.
+
 **Step 2**: download python files: Main.py, Primerdesigner.py, GUI.py and place them in the same directory.
 
 **Step 3**: Run the Main.py file using the command line or an IDE. After running the file the next window will open up:
